@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DBS API Testing</title>
+    
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-size: 90%;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.column {
+    float: left;
+    width: 25%;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.overlay {
+    text-align: center;
+}
+
+</style>
+    
+</head>
+<body>
+
+
+
+<h1>DBS API Caller Tool:</h1>
+<p>The buttons below will show you the individual steps to calling the DBS APIs. Use the <strong>DBS Login</strong> button to get started!</p>
+<strong>Username</strong>: iw036<br>
+<strong>Password</strong>: 123456<br><br>
+
+<div id="wrapper" style="width:100%; display:table;">
+    <div class="column" style="width:25%;">
+        <button id="login-button">(1) DBS Login  </button><br><br>
+        <button id="get-token">(2) Get Access Token</button><br><br>
+        <button id="get-parties">(3) Get Parties Info</button><br><br>
+        <button id="get-acc">(4) Get Account Info</button><br><br>
+        <button id="getPoints">(5) Get Points</button><br><br>
+    </div>
+    <div class="column" style="width:25%;">
+        <button id="2fa">Initiate 2FA</button><br><br>
+        <button id="postman-btn">Placeholder Button</button><br><br>
+        <button id="transfer">Placeholder Button</button><br><br>
+    </div>
+    <div class="column">
+    </div>
+</div>
+
+
+<div id="wrapper" style="width:1020px; display:table;">
+    <div style="width:30%; display:table-cell;">
+        <h2>What's Going On</h2>
+        <textarea id="responseTextArea" class="UIInput"
+                  style="width:300px; height:400px;"></textarea>
+    </div>
+    <div id="imageDiv" style="width:30%; display:table-cell;">
+        <h2>User Info</h2>
+    <table id="imageDiv" style="width:420px; display:table-cell;">
+  <tr>
+    <td>User's Name</td>
+    <td id='username'></td>
+  </tr>
+    <tr>
+    <td>User Email</td>
+    <td id='user-email'></td>
+  </tr>
+    <tr>
+    <td>Occupation</td>
+    <td id='occupation'></td>
+  </tr>
+    <tr>
+    <td>Employer</td>
+    <td id='employer'></td>
+  </tr>
+    <tr>
+    <td>Birthday</td>
+    <td id='birthday'></td>
+  </tr>
+        </table><br>
+    <b>Current Account Information</b>
+    <table style="width:420px; display:table-cell;">
+        <tbody id="accountTable">
+        </tbody>
+        </table><br>
+    <b>Savings Account Information</b>
+    <table style="width:420px; display:table-cell;">
+        <tbody id="savingsTable">
+        </tbody>
+        </table><br>
+    </div>
+    <div style="width:30%; display:table-cell;">
+        <b>Card Account Information</b>
+        <table style="width:420px; display:table-cell;">
+            <tbody id="cardTable">
+            </tbody>
+            </table><br>
+    </div>
+</div>
+
+<!--
+<div class="overlay">
+        <div class="loader"></div>
+    </div>
+-->
+
+<script src="./Assets/index.js"></script>
+</body>
+</html>
